@@ -30,8 +30,8 @@
     --muted: 220 14% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 255 85% 95%;
-    --accent-foreground: 255 45% 35%;
+    --accent: 210 100% 55%;
+    --accent-foreground: 0 0% 100%;
 
     /* Crisis Red - Warm but Serious */
     --destructive: 355 85% 60%;
