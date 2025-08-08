@@ -114,7 +114,7 @@ const Landing = () => {
                 </Button>
               </Link>
               <Link to="/mood">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary">
+                <Button size="lg" variant="default" className="text-lg px-8 py-4 bg-accent hover:bg-accent/90 text-accent-foreground">
                   <Heart className="mr-2 h-5 w-5" />
                   Track Your Mood
                 </Button>
