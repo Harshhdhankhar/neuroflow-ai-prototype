@@ -2,41 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* NeuroFlow AI Design System - Mental Health Support Platform */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Mental Health Color Palette - Calming & Trustworthy */
+    --background: 220 15% 97%;
+    --foreground: 215 25% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Therapeutic Blue Primary */
+    --primary: 210 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 100% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Gentle Purple Secondary */
+    --secondary: 255 85% 95%;
+    --secondary-foreground: 255 45% 35%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Soft Neutrals */
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 255 85% 95%;
+    --accent-foreground: 255 45% 35%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Crisis Red - Warm but Serious */
+    --destructive: 355 85% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Success Green - Calm & Positive */
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    /* Warning Amber - Gentle Alert */
+    --warning: 45 93% 58%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 210 100% 55%;
+
+    --radius: 0.75rem;
+
+    /* Therapeutic Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 55%), hsl(255 85% 65%));
+    --gradient-calm: linear-gradient(180deg, hsl(220 15% 97%), hsl(210 25% 95%));
+    --gradient-trust: linear-gradient(135deg, hsl(210 100% 70%), hsl(210 100% 80%));
+    
+    /* Mental Health Specific Colors */
+    --therapy-blue: 210 100% 55%;
+    --calm-purple: 255 85% 65%;
+    --gentle-lavender: 255 85% 95%;
+    --trust-navy: 215 45% 35%;
+    --safe-green: 142 76% 45%;
+    --crisis-red: 355 85% 60%;
+
+    /* Shadows for Emotional Safety */
+    --shadow-gentle: 0 4px 20px hsl(210 100% 55% / 0.1);
+    --shadow-trust: 0 8px 40px hsl(210 100% 55% / 0.15);
+    --shadow-crisis: 0 6px 30px hsl(355 85% 60% / 0.2);
+
+    /* Transitions */
+    --transition-calm: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-gentle: all 0.2s ease-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +135,48 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+}
+
+@layer components {
+  /* Mental Health Themed Component Classes */
+  .therapy-card {
+    @apply bg-card shadow-lg rounded-xl border border-border/50 p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
+  }
+
+  .calm-button {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105;
+  }
+
+  .crisis-button {
+    @apply bg-destructive text-destructive-foreground px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-200;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-calm {
+    background: var(--gradient-calm);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .emoji-mood {
+    @apply text-4xl cursor-pointer transition-transform duration-200 hover:scale-125 active:scale-110;
+  }
+
+  .chat-bubble-user {
+    @apply bg-primary text-primary-foreground p-4 rounded-2xl rounded-br-md max-w-xs ml-auto;
+  }
+
+  .chat-bubble-ai {
+    @apply bg-card text-card-foreground p-4 rounded-2xl rounded-bl-md max-w-xs border shadow-sm;
   }
 }
